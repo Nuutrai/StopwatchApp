@@ -20,7 +20,11 @@ struct ContentView: View {
                     .foregroundColor(.white)
                 
                 // Create a cirular button
-                CircleView()
+                HStack {
+                    CircleView(buttonColor: Color("Dark Grey"), buttonLable: "Reset", lableColor: .white)
+                    Spacer()
+                    CircleView(buttonColor: Color("Dark Green"), buttonLable: "Start", lableColor: .green)
+                }
             }
             .padding()
         }
@@ -28,5 +32,33 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    TabView(selection: Binding.constant(3)) {
+        Text("World Clock")
+            .tabItem {
+                Image(systemName: "globe")
+                Text("World Clock")
+            }
+            .tag(1)
+        Text("Alarm")
+            .tabItem {
+                Image(systemName: "alarm.fill")
+                Text("Alarm")
+            }
+            .tag(2)
+        ContentView()
+            .tabItem {
+                Image(systemName: "stopwatch.fill")
+                Text("Stopwatch")
+            }
+            .tag(3)
+        
+        Text("Timer")
+            .tabItem {
+                Image(systemName: "timer")
+                Text("Timer")
+            }
+            .tag(4)
+    }
+    .accentColor(.orange)
+    .preferredColorScheme(.dark)
 }
