@@ -15,6 +15,9 @@ struct ContentView: View {
                 .ignoresSafeArea()
             
             VStack {
+                
+                Spacer()
+                
                 Text("00:09.96")
                     .font(Font.system(size: 90, weight: .thin))
                     .foregroundColor(.white)
@@ -24,7 +27,17 @@ struct ContentView: View {
                     CircleView(buttonColor: Color("Dark Grey"), buttonLable: "Reset", lableColor: .white)
                     Spacer()
                     CircleView(buttonColor: Color("Dark Green"), buttonLable: "Start", lableColor: .green)
+                    
+                
                 }
+                
+                List {
+                    Text("1")
+                    Text("2")
+                    Text("3")
+                    Text("4")
+                }
+                .frame(height: 300)
             }
             .padding()
         }
