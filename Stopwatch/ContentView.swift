@@ -26,6 +26,12 @@ struct ContentView: View {
                 HStack {
                     CircleView(buttonColor: Color("Dark Grey"), buttonLable: "Reset", lableColor: .white)
                     Spacer()
+                    Circle()
+                        .frame(width: 10)
+                    Circle()
+                        .frame(width: 10)
+                        .foregroundColor(.gray)
+                    Spacer()
                     CircleView(buttonColor: Color("Dark Green"), buttonLable: "Start", lableColor: .green)
                     
                 
@@ -34,11 +40,11 @@ struct ContentView: View {
                 List {
                     
                     Group {
-                        Text("1")
-                        Text("2")
-                        Text("3")
-                        Text("4")
-                        Text("5")
+                        ListView(lapNum: 5, lapTime: "00:00.98", lapColor: .white)
+                        ListView(lapNum: 4, lapTime: "00:04.08", lapColor: .red)
+                        ListView(lapNum: 3, lapTime: "00:00.96", lapColor: .green)
+                        ListView(lapNum: 2, lapTime: "00:02.76", lapColor: .white)
+                        ListView(lapNum: 1, lapTime: "00:01.16", lapColor: .white)
                     }
                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                     

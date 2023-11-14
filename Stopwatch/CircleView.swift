@@ -33,10 +33,10 @@ struct CircleView: View {
             // Fourth layer
             Text(buttonLable)
                 .foregroundColor(lableColor)
-                .font(.title)
+                .font(.title3)
         }    }
 }
 
 #Preview {
-    CircleView(buttonColor: .gray, buttonLable: "Reset", lableColor: .gray)
+    CircleView(buttonColor: .gray, buttonLable: "Reset", lableColor: .white)
 }
