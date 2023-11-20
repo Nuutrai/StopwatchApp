@@ -31,36 +31,11 @@ struct WorldClock: View {
                             .padding(.init(top: 7, leading: 0, bottom: 8, trailing: 0))
                         Spacer()
                     }
-                    HStack {
-                        VStack {
-                            HStack {
-                                Text("Today, -3HRS")
-                                    .foregroundColor(.gray)
-                                Spacer()
-                            }
-                            HStack {
-                                Text("Vancouver")
-                                    .font(.title)
-                                Spacer()
-                            }
-                        }
-                        HStack {
-                            VStack {
-                                
-                                Text("5:55")
-                                    .font(.custom("a", size: 60))
-                                    .fontWeight(.light)
-                                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: -7))
-                            }
-                            VStack {
-                                Spacer()
-                                Text("PM")
-                                    .font(.title)
-                                
-                            }
-                        }
-                    }
-                    .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
+                    ListWorldView(area: "Vancouver", time: "5:55", date: "Today, -3", meridiem: "PM")
+                    ListWorldView(area: "Toronto", time: "8:55", date: "Today, +0", meridiem: "PM")
+                    ListWorldView(area: "Beijing", time: "9:55", date: "Tomorrow, +13", meridiem: "AM")
+                    ListWorldView(area: "Tokyo", time: "10:55", date: "Tomorrow, +14", meridiem: "AM")
+                    ListWorldView(area: "Sydney", time: "12:55", date: "Tomorrow, +16", meridiem: "PM")
                 }
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
             }
@@ -80,7 +55,7 @@ struct WorldClock: View {
                 Text("World Clock")
             }
             .tag(1)
-        Text("Alarm")
+        Image(systemName: "alarm")
             .tabItem {
                 Image(systemName: "alarm.fill")
                 Text("Alarm")
